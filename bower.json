@@ -1,0 +1,20 @@
+{
+  "name": "ev-code",
+  "version": "0.0.0",
+  "authors": [
+    "Seth Borden <sethborden@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.8",
+    "bootstrap": "~3.3.6",
+    "ui-bootstrap": "~0.14.3"
+  }
+}

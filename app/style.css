@@ -1,0 +1,50 @@
+ul.nav.nav-tabs > li {
+    padding: 5px 10px 5px 10px;
+}
+
+#collapse {
+    margin: 20px;
+}
+
+select {
+    background: midnightblue;
+    color: white;
+    width: 70%;
+    text-align: center;
+    height: 120%;
+    border: none;
+    font-size: 
+}
+
+td {
+    width: 400px;
+    border: 1px solid #ccc;
+}
+
+table {
+    border: 1px solid #ccc;
+    border-width: 0 1px 1px 1px;
+}
+
+.active {
+    text-decoration: underline;
+}
+
+.nav.nav-tabs > li {
+    color: cadetblue;
+}
+
+#title {
+    color: cadetblue;
+    font-size: 1.5em;
+}
+
+.select-row > td{
+    border: none;
+    text-align: center;
+}
+
+#select-table {
+    border: none;
+    margin-bottom: 0;
+}

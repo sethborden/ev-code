@@ -1,0 +1,9 @@
+{
+  "name": "angular",
+  "version": "1.4.8",
+  "main": "./angular.js",
+  "ignore": [],
+  "dependencies": {
+    "ui-bootstrap": "~0.14.3"
+  }
+}

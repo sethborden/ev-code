@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EverVest Scenarios</title>
+    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="app/style.css">
+</head>
+<body ng-app="app">
+<div role="button" data-toggle="collapse" href="#collapse" ng-click="showScenarios=!showScenarios" ng-init="showScenarios=false" >
+    <span class="glyphicon" 
+          ng-class="{'glyphicon-triangle-bottom': showScenarios, 'glyphicon-triangle-right':!showScenarios}">
+    <span id="title">
+        Scenario Comparisons
+    </span>
+</div>
+<div id="collapse" class="collapse" ng-controller="ScenarioController as scn">
+    <div class="col-md-10 col-md-offset-1">
+        <ul class="nav nav-tabs" role="tablist">
+            <li ng-class="{'active':scn.activeTab==0}"
+            ng-click="scn.activeTab=0">Project Info</li>
+            <li ng-class="{'active':scn.activeTab==1}"
+            ng-click="scn.activeTab=1">Energy Production</li>
+            <li ng-class="{'active':scn.activeTab==2}"
+            ng-click="scn.activeTab=2">Asset Valuation</li>
+            <li ng-class="{'active':scn.activeTab==3}"
+            ng-click="scn.activeTab=3">Financing</li>
+        </ul>
+    </div>
+    <div id="baseInfo" class="col-md-10 col-md-offset-1">
+        <table id="select-table" class="table">
+            <tr class="select-row">
+                <td></td>
+                <td>
+                    <select id="scenarioOne" ng-model="scn.scenarioOne" ng-options="s.id for s in scn.scenarios"> </select>
+                </td>
+                <td>
+                    <select id="scenarioTwo" ng-model="scn.scenarioTwo" ng-options="s.id for s in scn.scenarios"> </select>
+                </td>
+                <td>
+                    <select id="scenarioThree" ng-model="scn.scenarioThree" ng-options="s.id for s in scn.scenarios"> </select> </select>
+                </td>
+            </tr>
+        </table>
+        <table class="table">
+            <tr>
+                <td>Asset Case</td>
+                <td>{{scn.getAsset(scn.scenarioOne.asset_id)[0].description}}</td>
+                <td>{{scn.getAsset(scn.scenarioTwo.asset_id)[0].description}}</td>
+                <td>{{scn.getAsset(scn.scenarioThree.asset_id)[0].description}}</td>
+            </tr>
+            <tr>
+                <td>Capital Structure</td>
+                <td>{{scn.getCap(scn.scenarioOne.capital_structure_id)[0].description}}</td>
+                <td>{{scn.getCap(scn.scenarioTwo.capital_structure_id)[0].description}}</td>
+                <td>{{scn.getCap(scn.scenarioThree.capital_structure_id)[0].description}}</td>
+            </tr>
+            <tr>
+                <td>Stress Test</td>
+                <td>{{scn.getStress(scn.scenarioOne.stress_id)[0].description}}</td>
+                <td>{{scn.getStress(scn.scenarioTwo.stress_id)[0].description}}</td>
+                <td>{{scn.getStress(scn.scenarioThree.stress_id)[0].description}}</td>
+            </tr>
+        </table>
+    </div>
+    <!--div id="tabInfo">
+        <div ng-show="scn.activeTab==0">
+            <table>
+                <tr ng-repeat="(k,v) in scn.scenarioOne">
+                    <td>{{k}}</td>
+                </tr>
+            </table>
+        </div>
+        <div ng-show="scn.activeTab==1">
+            tab 2 
+        </div>
+        <div ng-show="scn.activeTab==2">
+            tab 3
+        </div>
+        <div ng-show="scn.activeTab==3">
+            tab 4
+        </div>
+    </div-->
+</div>
+<script type="text/javascript" src="app/app.js"></script>    
+<script type="text/javascript" src="app/services/scenario.service.js"></script>    
+<script type="text/javascript" src="app/components/scenario.controller.js"></script>    
+</body>
+</html>
